@@ -137,9 +137,30 @@ nav.main a.on{color:var(--gold);background:rgba(232,194,90,.08)}
 }
 
 /* ========================= هيرو ========================= */
-.hero{position:relative;text-align:center;padding:110px 24px 90px;overflow:hidden}
+.hero{position:relative;text-align:center;padding:70px 24px 80px;overflow:hidden}
 .hero .crest{width:118px;margin:0 auto 26px;animation:floatY 5s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(232,194,90,.4))}
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* شعار الفيديو المتحرك */
+.emblem-wrap{
+  position:relative;width:min(360px,72vw);margin:0 auto 6px;
+  mix-blend-mode:screen;
+  animation:emblemIn 1.1s cubic-bezier(.2,.8,.3,1) both;
+}
+.emblem-wrap::before{
+  content:'';position:absolute;inset:-18% -22%;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 42%,rgba(232,194,90,.20),transparent 62%);
+  filter:blur(22px);
+}
+.hero .crest-vid{
+  position:relative;z-index:1;
+  display:block;width:100%;height:auto;
+}
+@keyframes emblemIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .hero .crest-vid{animation:none}
+  .hero .crest{animation:none}
+}
 
 .hero h1{
   font-size:clamp(2.6rem,7.5vw,5.2rem);font-weight:900;line-height:1.15;

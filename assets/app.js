@@ -79,7 +79,7 @@
       <header class="site">
         <div class="bar">
           <a class="brand" href="${BASE}index.html">
-            <img src="${BASE}assets/logo.svg" alt="Corven">
+            <img src="${BASE}assets/logo.png" alt="Corven">
             <span class="t">
               <b data-k="brand.ministry">${esc(b.ministry)}</b>
               <span data-k="brand.name">${esc(b.name)}</span>
@@ -99,7 +99,7 @@
     if (ftr) {
       ftr.outerHTML = `
       <footer class="site">
-        <img class="lg" src="${BASE}assets/logo.svg" alt="">
+        <img class="lg" src="${BASE}assets/logo.png" alt="">
         <h4 data-k="brand.footTitle">${esc(b.footTitle)}</h4>
         <p data-k="brand.footLine">${esc(b.footLine)}</p>
         <div class="cp">
@@ -132,9 +132,13 @@
   R.home = function () {
     const h = S.data.home;
     $('#hero').innerHTML = `
-      <img class="crest" src="${BASE}assets/logo.svg" alt="">
-      <h1 data-k="home.heroTitle">${esc(h.heroTitle)}</h1>
-      <div class="en" data-k="home.heroEn">${esc(h.heroEn)}</div>
+      <div class="emblem-wrap">
+        <video class="crest-vid" autoplay muted loop playsinline preload="auto"
+               poster="${BASE}assets/emblem-poster.jpg" aria-label="${esc(h.heroTitle)} — ${esc(h.heroEn)}">
+          <source src="${BASE}assets/emblem.webm" type="video/webm">
+          <source src="${BASE}assets/emblem.mp4" type="video/mp4">
+        </video>
+      </div>
       <p class="tag" data-k="home.heroTag">${esc(h.heroTag)}</p>
       <div class="cta">
         <a class="btn solid" href="${BASE}pages/constitution.html">الدستور</a>
@@ -213,7 +217,7 @@
 
     $('#seal').innerHTML = `
       <div class="card" style="text-align:center;border-color:var(--line)">
-        <img src="${BASE}assets/logo.svg" style="width:74px;margin:0 auto 14px;opacity:.9" alt="">
+        <img src="${BASE}assets/logo.png" style="width:74px;margin:0 auto 14px;opacity:.9" alt="">
         <h3 style="color:var(--gold);font-size:1.2rem;margin-bottom:10px" data-k="constitution.sealTitle">${esc(c.sealTitle)}</h3>
         <p class="ml" style="color:var(--txt-2);max-width:760px;margin-inline:auto" data-k="constitution.sealBody">${esc(c.sealBody)}</p>
       </div>`;
