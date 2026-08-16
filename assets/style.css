@@ -155,6 +155,15 @@ nav.main a.on{color:var(--gold);background:rgba(232,194,90,.08)}
 .hero .crest-vid{
   position:relative;z-index:1;
   display:block;width:100%;height:auto;
+  /* تنعيم الحواف حتى لا يظهر إطار الفيديو */
+  -webkit-mask-image:
+    linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%),
+    linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%);
+  mask-image:
+    linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%),
+    linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-composite:intersect;
 }
 @keyframes emblemIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){
